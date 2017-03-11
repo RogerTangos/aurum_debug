@@ -43,6 +43,7 @@ class Pandas extends React.Component {
   }
 
   componentDidUpdate(){
+    console.log('Pandas.js componentDidUpdate');
     if (this.props.source !== '') {
       console.log('makeInspect called');
       makeInspect(this.props.source, this.populatePandas);

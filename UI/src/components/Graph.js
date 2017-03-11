@@ -68,6 +68,10 @@ class Graph extends React.Component {
 
   }
 
+  componentDidUpdate(){
+    console.log('Graph.js componentDidUpdate');
+  }
+
   render() {
 
    return (

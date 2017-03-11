@@ -21,10 +21,122 @@ class Search extends React.Component {
     e['target'] = {}
     e['target']['value'] = query
     this.handleChange( e );
+    console.log('Search.js componentWillMount');
+  }
+
+  componentDidMount(){
+    const query = 'GunnariTestQuery';
+    this.setState( {userQuery: query });
+
+    this.handleResponse('foo')
   }
 
   handleResponse(response) {
-    const json = JSON.parse(response.responseText);
+    // const json = JSON.parse(response.responseText);
+    const json = {
+      "edges": [
+        [
+          {
+            "db_name": "school",
+            "field_name": "school",
+            "nid": 6,
+            "score": -1,
+            "source_name": "school"
+          },
+          {
+            "db_name": "ma_data",
+            "field_name": "building_subcategory",
+            "nid": 587248320,
+            "score": 3.3241112,
+            "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+          }
+        ]
+      ],
+      "sources": {
+        "Boston Municipal Energy Data_bcnb-bux2.csv": {
+          "field_res": [
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3241112,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3207755,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3177924,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3161294,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3161294,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3161027,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3128018,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.3070745,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.292893,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            },
+            {
+              "db_name": "ma_data",
+              "field_name": "building_subcategory",
+              "nid": 587248320,
+              "score": 3.2115924,
+              "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+            }
+          ],
+          "source_res": {
+            "db_name": "ma_data",
+            "field_name": "building_subcategory",
+            "nid": 587248320,
+            "score": 3.3241112,
+            "source_name": "Boston Municipal Energy Data_bcnb-bux2.csv"
+          }
+        }
+      }
+    }
+
     this.props.updateQuery(this.state.userQuery, false);
     this.props.updateResult(json);
   }
