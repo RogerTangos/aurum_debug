@@ -44,7 +44,7 @@ nbformat==4.0.1
 networkx==1.11
 nltk==3.1
 normality==0.2.4
-notebook==4.0.6
+notebook==6.1.5
 numpy==1.11.1
 ontospy==1.7.3
 packaging==16.8
