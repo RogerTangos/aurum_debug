@@ -84,5 +84,5 @@ urllib3==1.15.1
 uWSGI==2.0.12
 webencodings==0.5
 Werkzeug==0.11.3
-wheel==0.24.0
+wheel==0.38.1
 yappi==0.94
